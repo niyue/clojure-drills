@@ -2,6 +2,6 @@
   (:use clojure.test
         clojure-drills.core))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest sample-test
+  (testing "sample test"
+    (is (= 1 1))))
