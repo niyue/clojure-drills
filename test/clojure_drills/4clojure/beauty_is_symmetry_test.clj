@@ -1,6 +1,6 @@
 ; http://www.4clojure.com/problem/96
 
-(ns clojure-drills.4clojure.beauty-is-symmetry
+(ns clojure-drills.4clojure.beauty-is-symmetry-test
   (:use clojure.test
         clojure-drills.core))
 
