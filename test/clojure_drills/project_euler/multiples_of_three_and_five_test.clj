@@ -1,6 +1,6 @@
 ; http://projecteuler.net/problem=1
 
-(ns clojure-drills.project-euler.multiple-of-three-and-five-test
+(ns clojure-drills.project-euler.multiples-of-three-and-five-test
   (:use clojure.test
         clojure-drills.core))
 
