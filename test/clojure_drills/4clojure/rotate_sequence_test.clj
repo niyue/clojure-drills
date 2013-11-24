@@ -1,7 +1,7 @@
 ; http://www.4clojure.com/problem/44
 
 (ns clojure-drills.4clojure.rotate-sequence-test
-  (:require clojure.test))
+  (:use clojure.test))
 
 (defn rotate [r c]
   (let [s (mod r (count c))]

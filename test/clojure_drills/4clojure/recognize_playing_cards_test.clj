@@ -1,7 +1,7 @@
 ; http://www.4clojure.com/problem/128
 
 (ns clojure-drills.4clojure.recognize-playing-cards-test
-  (:require clojure.test))
+  (:use clojure.test))
 
 (defn parse-card [card]
   (let [s ({\D :diamond, \H :heart, \C :club, \S :spade} (first card))

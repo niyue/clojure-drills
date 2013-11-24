@@ -1,7 +1,7 @@
 ; http://www.4clojure.com/problem/43
 
-(ns clojure-drills.4clojure.reverse-interleave
-  (:require clojure.test))
+(ns clojure-drills.4clojure.reverse-interleave-test
+  (:use clojure.test))
 
 (defn rev-interleave [coll step]
   (vals (group-by

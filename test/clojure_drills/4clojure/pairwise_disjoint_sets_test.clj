@@ -2,6 +2,7 @@
 
 (ns clojure-drills.4clojure.pairwise-disjoint-sets-test
   (:use clojure.test
+        clojure.set
         clojure-drills.core))
 
 (defn pairwise-disjoint? [s]
