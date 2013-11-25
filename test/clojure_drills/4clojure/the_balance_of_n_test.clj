@@ -4,9 +4,6 @@
   (:use clojure.test
         clojure-drills.core))
 
-(subs "12" 0 1/2)
-(subs "12" 1 2)
-
 (defn balanced? [n]
   (let [digits (str n)
         dsum #(reduce + (map int %))
@@ -28,3 +25,7 @@
 
 (deftest balance-number-test
     (is (= (balanced? 89098) true)))
+
+; learn:
+; 1) (subs "12" 1 2) => "2"
+; 2) (take 1 "12") => (\1)
