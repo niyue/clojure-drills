@@ -18,4 +18,5 @@
 (deftest which-collection-test
     (is (= [:map :set :vector :list] (map which-coll [{} #{} [] ()]))))
 
-
+; learn:
+; 1) counted? reversible? associative? ifn? sequential?
