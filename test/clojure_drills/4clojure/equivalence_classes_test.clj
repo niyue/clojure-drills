@@ -10,3 +10,5 @@
 (deftest equivalence-classes-test
     (is (= (equi #(* % %) #{-2 -1 0 1 2}))))
 
+; learn:
+; 1) constantly function
