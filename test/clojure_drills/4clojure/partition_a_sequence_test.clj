@@ -11,5 +11,15 @@
      (* (quot (count coll) n) n)
      coll)))
 
+(defn partition-seq-2 [n coll]
+  (let [p (partition-by #(quot % n) coll)]
+    (if (zero? (mod (count coll) n))
+      p
+      (drop-last p))))
+
 (deftest partition-seq-test
   (is (= (partition-seq 3 (range 8)) '((0 1 2) (3 4 5)))))
+
+(deftest partition-seq-2-test
+  (is (= (partition-seq-2 3 (range 8)) '((0 1 2) (3 4 5)))))
+
