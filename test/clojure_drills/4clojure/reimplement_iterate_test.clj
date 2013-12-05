@@ -9,7 +9,7 @@
    (cons x (new-iterate f (f x)))))
 
 (deftest inc-iterate-test
-  (is (= (take 100 (range 10)) (take 100 (new-iterate inc 0)))))
+  (is (= (take 100 (range 1000)) (take 100 (new-iterate inc 0)))))
 
 ; learn
 ; 1) lazy-seq

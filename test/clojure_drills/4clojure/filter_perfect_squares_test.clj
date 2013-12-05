@@ -1,6 +1,6 @@
 ; http://www.4clojure.com/problem/74
 
-(ns clojure-drills.filter-perfect-squares-test
+(ns clojure-drills.4clojure.filter-perfect-squares-test
   (:use clojure.test
         clojure-drills.core))
 
