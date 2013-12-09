@@ -13,13 +13,13 @@
              (m %) (m %)
              :else %)
            fl)]
-      (apply (resolve op) args))))
+      (apply ({'+ +, '- -, '* *, '/ /} op) args))))
 
 (deftest compute-test
     (is (= 2 ((compute '(/ a b)) '{b 8 a 16}))))
 
+; learn:
+; 1) Symbol resolution in clojure, (resolve some-symbol)
+; 2) symbol literal, '+, '-, '*, '/
 
-(= (class /) (first '(/)))
-(class /)
 
-(apply (resolve (first '(/))) '(16 8))
