@@ -61,6 +61,9 @@
 ; http://projecteuler.net/problem=7
 ; (nth (primes 200000) 10000)
 
+; http://projecteuler.net/problem=10
+; (reduce + (primes 2000000))
+
 ; learn:
 ; 1) transient data structure
 ; 2) doseq
