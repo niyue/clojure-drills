@@ -9,11 +9,10 @@
     (= s (clojure.string/reverse s))))
 
 (defn largest-palindrome-product [n]
-  (first
-    (filter palindrome?
-            (sort >
-                  (for [i (reverse (range n))
-                        j (reverse (range i n))]
-                    (* i j))))))
+  (apply max
+         (filter palindrome?
+                 (for [i (reverse (range n))
+                       j (reverse (range i n))]
+                   (* i j)))))
 
 ;(largest-palindrome-product 1000)
