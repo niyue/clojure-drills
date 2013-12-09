@@ -55,8 +55,11 @@
   (dotimes [i 10]
     (doall (primes 1000))))
 )
-;(primes 10000)
+
 ;(apply max (primes (math/sqrt 600851475143)))
+
+; http://projecteuler.net/problem=7
+; (nth (primes 200000) 10000)
 
 ; learn:
 ; 1) transient data structure
