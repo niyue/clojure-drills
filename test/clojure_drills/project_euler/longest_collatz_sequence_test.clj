@@ -17,5 +17,11 @@
 (defn collatz [n]
   (concat (take-while #(not= % 1) (iterate next n)) [1]))
 
-;(apply max-key count (map collatz (range 1 100)))
+;(apply max-key count (map fast-collatz (range 1 1000)))
+
+(defn loop-collatz [n]
+  (loop [s []
+         x n]
+    (let [ex (conj s x)]
+      (if (== x 1) ex (recur ex (next x))))))
 
