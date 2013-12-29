@@ -6,12 +6,14 @@
 
 (defn intervals [v]
   (let [nums (sort (distinct v))]
-    (if (= (count nums) 1)
-      [(first nums) (last nums)]
-      (map #(vector (first (first %)) (last (last %)))
-           (filter #(= 1 (- (last (first %)) (first (first %))))
-                   (partition-by #(- (last %) (first %))
-                                 (partition 2 1 nums)))))))
+    (reduce #(if (and (seq %) (= %2 (inc (second (last %)))))
+               (concat (drop-last %) [[(first (last %)) %2]])
+               (concat % [[%2 %2]]))
+            []
+            nums)))
+
+(deftest simple-single-intervals-test
+    (is (= (intervals [1 2]) [[1 2]])))
 
 (deftest single-intervals-test
     (is (= (intervals [1 2 3]) [[1 3]])))
