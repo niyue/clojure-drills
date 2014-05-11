@@ -4,14 +4,13 @@
   (:use clojure.test
         clojure-drills.core))
 
-(conj [1 2] 3)
-
 (defn digits [n b]
-  (loop [r n
-         d []]
-    (if (zero? r)
-      (if (empty? d) [0] d)
-      (recur (mod r b) (conj d (quot r b))))))
+  (reverse
+    (loop [r n
+           d []]
+      (if (zero? r)
+        (if (empty? d) [0] d)
+        (recur (quot r b) (conj d (mod r b)))))))
 
 (deftest base-10-test
   (is (= [1 2 3] (digits 123 10))))
