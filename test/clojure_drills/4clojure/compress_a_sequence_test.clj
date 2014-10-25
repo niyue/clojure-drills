@@ -18,3 +18,6 @@
 
 (deftest compress-two-same-elements-sequence-test
     (is (= [:a] (comp-seq [:a :a]))))
+
+; learn:
+; 1) partition-by

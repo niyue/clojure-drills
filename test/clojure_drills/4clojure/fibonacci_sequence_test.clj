@@ -12,3 +12,6 @@
 
 (deftest fibonacci-sequence-test
     (is (= [1 1 2] (fibs 3))))
+
+; learn:
+; 1) usage of `iterate`

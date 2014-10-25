@@ -16,3 +16,4 @@
 
 ; learn:
 ; 1) how to append an element into the end of a sequence `concat coll [e]`
+; 2) use list () for reversion (like a stack)

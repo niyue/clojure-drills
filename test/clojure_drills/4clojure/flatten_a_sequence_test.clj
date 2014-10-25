@@ -30,3 +30,6 @@
 (deftest flatten-seq-test
   (is (= [:a :b :c]
        (flat [:a [:b] :c]))))
+
+; learn:
+; 1) usage of `mapcat`
