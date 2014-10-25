@@ -16,3 +16,7 @@
 ;(interleave [1 2 3] [1 2 3])
 ;(apply concat (map #(list % %) [1 2 3]))
 ;(mapcat #list(% %) [1 2 3])
+
+; learn:
+; 1) usage of `repeat`: mapcat #(repeat 2 %)
+; 2) usage of `interleave`

@@ -9,6 +9,14 @@
     []
     (cons s (ran (inc s) e))))
 
+; a different implementation
+(defn rang [start end]
+  (take (- end start) (iterate inc start)))
+
 (deftest range-test
   (is (= '(1 2 3)
          (ran 1 4))))
+
+(deftest range-test-two
+  (is (= '(1 2 3)
+         (rang 1 4))))
