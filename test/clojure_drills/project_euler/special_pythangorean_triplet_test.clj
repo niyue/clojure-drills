@@ -1,6 +1,6 @@
 ; http://projecteuler.net/problem=9
 
-(ns clojure-drills.project-euler.special-pythangorean-triple-test
+(ns clojure-drills.project-euler.special-pythangorean-triplet-test
   (:require [clojure.math.numeric-tower :as math])
   (:use clojure.test
         clojure-drills.core))

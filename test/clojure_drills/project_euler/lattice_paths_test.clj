@@ -1,6 +1,6 @@
 ; http://projecteuler.net/problem=15
 
-(ns clojure-drills.project-euler.lattice-path-test
+(ns clojure-drills.project-euler.lattice-paths-test
   (:require [clojure.math.numeric-tower :as math])
   (:use clojure.test
         clojure-drills.core))

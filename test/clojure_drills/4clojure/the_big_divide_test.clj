@@ -1,6 +1,6 @@
 ; http://www.4clojure.com/problem/148
 
-(ns clojure-drills.4clojure.the-big-divide
+(ns clojure-drills.4clojure.the-big-divide-test
   (:use clojure.test
         clojure-drills.core))
 
@@ -25,4 +25,4 @@
     (is (= 233168 (big-divide 1000 3 5))))
 
 (deftest large-number-test
-    (is (= "2333333316666668" (str (big-divide 100000000 3 5))))
+    (is (= "2333333316666668" (str (big-divide 100000000 3 5)))))
