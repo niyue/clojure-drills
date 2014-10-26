@@ -25,3 +25,4 @@ zero? (mod 10 3)
 
 ; learn:
 ; 1) keep-indexed usage
+; 2) partition-all with step
