@@ -4,9 +4,12 @@
   (:use clojure.test
         clojure-drills.core))
 
+(defn max-in [& coll]
+  (reduce #(if (> % %2) % %2) coll))
+
 (deftest max-function
     (is (= 5 (#(if (> %1 %2) %1 %2) 5 4))))
 
 
 (deftest maximum-value
-    (is (= 5 ((fn [& coll] (reduce #(if (> %1 %2) %1 %2) 0 coll)) 3 5 4))))
+    (is (= 5 (max-in 3 5 4))))
