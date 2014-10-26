@@ -8,5 +8,18 @@
          #(mod % step)
          coll)))
 
+; an implementation that can be applied to more general cases
+(defn reverse-interleave [coll step]
+  (let [c (map list coll (range))]
+    (map #(map first %) (vals (group-by #(mod (second %) step) c)))))
+
+
+(deftest rev-interleave-test
+  (= '((1 3 5) (2 4 6)) (rev-interleave [1 2 3 4 5 6] 2)))
+
 (deftest reverse-interleave-test
-  (is (= '((1 3 5) (2 4 6)) (rev-interleave [1 2 3 4 5 6] 2))))
+  (= '((1 3 5) (2 4 6)) (reverse-interleave [1 2 3 4 5 6] 2)))
+
+; learn:
+; 1) `apply map list` to more than one collections
+; 2) group-by
