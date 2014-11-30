@@ -3,18 +3,15 @@
 (ns clojure-drills.4clojure.palindromic-numbers-test
   (:use clojure.test))
 
-((fn [x] (= (str x) (clojure.string/reverse (str x)))) 101)
-
 (defn palindromics [n]
-  (let [left-most (fn [i] (loop [m i]
-                            (if (< m 10)
-                              m
-                              (recur (quot m 10)))))
-        right-most (fn [i] (mod i 10))
-        palindrome? (fn [x] (and (= (left-most x) (right-most x))
-                                 (= (str x) (clojure.string/reverse (str x)))))]
+  (let [rev (fn [x]
+              (loop [m 0
+                     i x]
+                (if (zero? i)
+                  m
+                  (recur (+ (* m 10) (mod i 10)) (quot i 10)))))
+        palindrome? (fn [x] (= x (rev x)))]
     (filter palindrome? (iterate inc n))))
-; TODO: use integer = palindrome integer to determine
 
 (deftest above-0-test
   (is (= [0 1 2 3 4 5 6 7 8 9
@@ -30,3 +27,7 @@
 
 (deftest above-9999999-test
   (is (= true (apply < (take 6666 (palindromics 9999999))))))
+
+; learn:
+; 1) solution one: using string and string reverse function, easy to implement but too slow
+; 2) solution two: using integer division/reversion and comparison, still too slow
