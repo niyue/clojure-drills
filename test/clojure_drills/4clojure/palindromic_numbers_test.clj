@@ -3,11 +3,16 @@
 (ns clojure-drills.4clojure.palindromic-numbers-test
   (:use clojure.test))
 
-
 ((fn [x] (= (str x) (clojure.string/reverse (str x)))) 101)
 
 (defn palindromics [n]
-  (let [palindrome? (fn [x] (= (str x) (clojure.string/reverse (str x))))]
+  (let [left-most (fn [i] (loop [m i]
+                            (if (< m 10)
+                              m
+                              (recur (quot m 10)))))
+        right-most (fn [i] (mod i 10))
+        palindrome? (fn [x] (and (= (left-most x) (right-most x))
+                                 (= (str x) (clojure.string/reverse (str x)))))]
     (filter palindrome? (iterate inc n))))
 ; TODO: use integer = palindrome integer to determine
 
